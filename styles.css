@@ -1,0 +1,153 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(ellipse at center, #000 20%, #111 80%);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Contenedor principal */
+.login-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: black;
+    box-shadow:
+        0 0 60px 20px rgba(0, 255, 0, 0.1),
+        inset 0 0 40px 10px rgba(0, 255, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    z-index: 0;
+    overflow: visible;
+}
+
+/* Disco de acreción */
+.login-container .accretion-disk {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 100px;
+    transform: translate(-50%, -50%) rotateX(60deg);
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(0, 255, 0, 0.6), rgba(0, 255, 0, 0) 70%);
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.1);
+    animation: spin 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Rayos gamma */
+.login-container .gamma-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 255, 0, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 0 22px rgba(0, 255, 0, 0.9);
+    animation: orbit 2s linear infinite;
+    transform-origin: center center;
+    z-index: 2;
+}
+
+.login-container .gamma-rays:nth-of-type(1)  { animation-delay: 0s; }
+.login-container .gamma-rays:nth-of-type(2)  { animation-delay: 0.3s; }
+.login-container .gamma-rays:nth-of-type(3)  { animation-delay: 0.6s; }
+.login-container .gamma-rays:nth-of-type(4)  { animation-delay: 0.9s; }
+.login-container .gamma-rays:nth-of-type(5)  { animation-delay: 1.2s; }
+.login-container .gamma-rays:nth-of-type(6)  { animation-delay: 1.5s; }
+.login-container .gamma-rays:nth-of-type(7)  { animation-delay: 1.8s; }
+.login-container .gamma-rays:nth-of-type(8)  { animation-delay: 2.1s; }
+.login-container .gamma-rays:nth-of-type(9)  { animation-delay: 2.4s; }
+.login-container .gamma-rays:nth-of-type(10) { animation-delay: 2.7s; }
+
+/* Animación de rotación */
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotateX(60deg) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotateX(60deg) rotate(360deg); }
+}
+
+/* Animación de órbita */
+@keyframes orbit {
+    0% { transform: rotate(0deg) translateX(120px); }
+    100% { transform: rotate(360deg) translateX(120px); }
+}
+
+/* Título */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00ff00; /* Color verde neon */
+}
+
+/* Estilos del formulario */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color: #aaa;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #00ff00;
+    background-color: #2e2e2e;
+    color: #fff;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #00ff00;
+}
+
+/* Botón de submit */
+.submit-btn {
+    background-color: #00ff00;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #33ff33;
+}
+
+/* Mensaje de error */
+#error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 10px;
+}

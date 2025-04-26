@@ -1,0 +1,297 @@
+:root {
+    --neon-pink: #ff6ec7;
+    --neon-blue: #00f7ff;
+    --neon-purple: #9d00ff;
+    --dark-bg: #0f0f1a;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--dark-bg);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background: black;
+    border-bottom: 3px solid #39ff14;
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem; /* Adjusted padding to move title more to the left */
+}
+
+.search-form {
+    margin-left: 20px; /* Add space between title and search input */
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    margin-left: -0.5rem; /* Move title slightly left */
+}
+
+.neon-text {
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14,
+                 0 0 10px #39ff14,
+                 0 0 20px #39ff14;
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+.italic-text {
+    color: white;
+    font-style: italic;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    color: #9d00ff;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.search-input {
+    padding: 8px 15px 8px 40px;
+    border: 2px solid #9d00ff;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 16px;
+    width: 200px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input:focus {
+    box-shadow: 0 0 10px #39ff14;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.filter-select, .filter-input {
+    padding: 0.5rem 1rem;
+    border: 2px solid #39ff14;
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+.filter-select {
+    min-width: 150px;
+}
+
+.filter-input {
+    width: 100px;
+}
+
+.filter-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.filter-button {
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: 2px solid #39ff14;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-button:hover {
+    background: rgba(57, 255, 20, 0.1);
+    box-shadow: 0 0 10px #39ff14;
+}
+
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 5px #39ff14,
+                     0 0 10px #39ff14;
+    }
+    to {
+        text-shadow: 0 0 10px #39ff14,
+                     0 0 20px #39ff14,
+                     0 0 30px #39ff14;
+    }
+}
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 2rem 0 2rem; /* Añadido padding superior para separar de la parte superior */
+}
+
+.movie-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--neon-blue);
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 247, 255, 0.3);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 1rem;
+}
+
+.movie-title {
+    color: var(--neon-pink);
+    margin: 0 0 0.5rem 0;
+}
+
+.movie-year {
+    color: var(--neon-blue);
+    margin: 0;
+}
+
+/* Estilos para el ranking de películas populares */
+.ranking-container {
+    margin: 2rem;
+    padding: 1rem;
+    border: 2px solid #39ff14;
+    border-radius: 10px;
+    background-color: rgba(57, 255, 20, 0.1);
+    box-shadow: 0 0 15px #39ff14;
+}
+
+#ranking-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+#ranking-list .movie-card {
+    border: 2px solid var(--neon-pink);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#ranking-list .movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--neon-pink);
+}
+
+#ranking-list .movie-poster {
+    height: 300px;
+    object-fit: cover;
+}
+
+#ranking-list .movie-info {
+    padding: 0.5rem 1rem;
+}
+
+#ranking-list .movie-title {
+    color: var(--neon-pink);
+    font-weight: bold;
+    margin: 0 0 0.3rem 0;
+}
+
+#ranking-list .movie-year,
+#ranking-list .movie-rating,
+#ranking-list .movie-views {
+    color: var(--neon-blue);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Estilos para el calendario de estrenos */
+.calendar-container {
+    margin: 2rem;
+    padding: 1rem;
+    border: 2px solid #39ff14;
+    border-radius: 10px;
+    background-color: rgba(57, 255, 20, 0.1);
+    box-shadow: 0 0 15px #39ff14;
+}
+
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.calendar-controls label {
+    color: #39ff14;
+    font-weight: bold;
+}
+
+.calendar-controls select {
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #39ff14;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#calendar-content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#calendar-content h3 {
+    color: #39ff14;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#calendar-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#calendar-content li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #39ff14;
+}
+
+#calendar-content li:last-child {
+    border-bottom: none;
+}

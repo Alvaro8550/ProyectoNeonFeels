@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Mi Perfil</h1>
+        
+        <div class="avatar-section">
+            <img id="current-avatar" src="ultron.jpg" alt="Avatar" class="avatar" onclick="showAvatarOptions()">
+            <div id="avatar-options" class="avatar-options">
+                <img src="pato.jpg" class="avatar-option" onclick="changeAvatar(this)">
+                <img src="nezuko.png" class="avatar-option" onclick="changeAvatar(this)">
+                <img src="rickby.jpg" class="avatar-option" onclick="changeAvatar(this)">
+                <img src="fin.jpg" class="avatar-option" onclick="changeAvatar(this)">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" value="Usuario">
+        </div>
+
+        <div class="form-group">
+            <label for="language">Idioma</label>
+            <select id="language">
+                <option>Español</option>
+                <option>English</option>
+            </select>
+        </div>
+
+        <button onclick="saveProfile()">Guardar y ver Cartelera</button>
+    </div>
+
+    <script>
+        function showAvatarOptions() {
+            const options = document.getElementById('avatar-options');
+            options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function changeAvatar(img) {
+            document.getElementById('current-avatar').src = img.src;
+            document.getElementById('avatar-options').style.display = 'none';
+        }
+
+        function saveProfile() {
+            // Guardar los cambios del perfil (podría implementarse con localStorage)
+            localStorage.setItem('userName', document.getElementById('name').value);
+            localStorage.setItem('userAvatar', document.getElementById('current-avatar').src);
+            
+            // Redirigir a la cartelera
+            window.location.href = 'cartelera.html';
+        }
+    </script>
+</body>
+</html>

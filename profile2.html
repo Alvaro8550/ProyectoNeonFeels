@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perfil 2 - Usuario</title>
+    <link rel="stylesheet" href="profile2.css" />
+</head>
+<body>
+    <div class="profile2-container">
+        <div class="profile-header">
+            <img id="profile-pic" src="ultron.jpg" alt="Foto de Perfil" class="profile-pic" onclick="showAvatarOptions()" />
+            <input type="file" id="avatar-input" accept="image/*" style="display:none" onchange="changeAvatar(event)" />
+            <h2 contenteditable="true" id="username" oninput="saveUsername()">Usuario</h2>
+        </div>
+        <nav class="profile-menu">
+            <ul>
+                <li><a href="#" onclick="showSection('historial')">Historial de películas</a></li>
+                <li><a href="#" onclick="showSection('listas')">Listas</a></li>
+                <li><a href="#" onclick="showSection('resenas')">Reseñas</a></li>
+                <li><a href="#" onclick="showSection('actividad')">Actividad</a></li>
+                <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+            </ul>
+    </nav>
+    <button id="back-to-cartelera" onclick="goBackToCartelera()" style="margin-top: 20px; background-color: #39ff14; color: black; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Volver a la Cartelera</button>
+</div>
+
+<script src="profile2.js"></script>
+<script>
+    function goBackToCartelera() {
+        window.location.href = 'cartelera.html';
+    }
+</script>
+</body>
+</html>

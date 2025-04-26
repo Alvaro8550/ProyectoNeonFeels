@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeonFeels</title>
+  <link rel="stylesheet" href="cartelera.css" />
+  <link rel="stylesheet" href="profile2.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+      <div class="sidebar">
+      <div class="logo">
+         
+        NeonFeels
+      </div>
+        
+        <div class="menu-item active">
+          <i>🏠</i> Inicio
+        </div>
+        <div class="menu-item">
+          <i>🔍</i> Búsqueda Avanzada
+        </div>
+        <div class="menu-item">Ñ
+          <i>🎬</i> Próximos Estrenos
+        </div>
+        <div class="menu-item" id="mis-listas-menu">
+          <i>❤️</i> Mis Listas
+        </div>
+        <div class="menu-item">
+          <i>⭐</i> Reseñas y Calificaciones
+        </div>
+        <div class="menu-item">
+          <i>📊</i> Rankings Populares
+        </div>
+        <div class="menu-item">
+          <i>👥</i> Comunidad
+        </div>
+        
+        <div class="profile">
+          <a href="profile2.html" class="profile-button" style="display: flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; cursor: pointer;">
+            <img src="ultron.jpg" alt="Foto de Perfil" class="profile-pic" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #39ff14; object-fit: cover;" />
+            <span>Usuario</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="search-bar">
+          <i>🔍</i>
+          <input type="text" placeholder="Buscar películas, directores, actores..." />
+        </div>
+      
+      <!-- Filters -->
+      <h3>Búsqueda Avanzada</h3>
+      <form id="filter-form">
+        <label for="genre-filter">Género:</label>
+        <select id="genre-filter" name="genre-filter">
+          <option value="All">Todos</option>
+          <option value="Acción">Acción</option>
+          <option value="Comedia">Comedia</option>
+          <option value="Drama">Drama</option>
+          <option value="Terror">Terror</option>
+          <option value="Ciencia Ficción">Ciencia Ficción</option>
+          <option value="Suspenso">Suspenso</option>
+          <option value="Fantasía">Fantasía</option>
+        </select>
+        <label for="year-filter">Año:</label>
+        <select id="year-filter" name="year-filter">
+          <option value="">Todos</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2020-2023">2020-2023</option>
+          <option value="2010-2019">2010-2019</option>
+          <option value="Before 2010">Antes de 2010</option>
+        </select>
+        <label for="rating-filter">Calificación mínima:</label>
+        <select id="rating-filter" name="rating-filter">
+          <option value="0">Todas</option>
+          <option value="9">9+</option>
+          <option value="8">8+</option>
+          <option value="7">7+</option>
+          <option value="6">6+</option>
+        </select>
+        <button id="filter-button" type="submit">Filtrar</button>
+        <button id="clear-filters-button" type="button">Limpiar filtros</button>
+      </form>
+      
+      <!-- Personalized Recommendations -->
+      <div class="section-title">
+        <h2>Recomendado Para Ti</h2>
+        <span class="see-all">Ver Todo</span>
+      </div>
+      
+      <div class="movie-grid">
+        <div class="movie-card">
+          <img src="/api/placeholder/160/220" alt="Póster de Película" />
+          <div class="movie-info">
+            <h3>Interstellar Crisis</h3>
+            <p>Ciencia Ficción, Aventura</p>
+            <div class="rating">
+              <i>⭐</i> 9.2
+            </div>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="/api/placeholder/160/220" alt="Póster de Película" />
+          <div class="movie-info">
+            <h3>The Last Voyage</h3>
+            <p>Drama, Suspenso</p>
+            <div class="rating">
+              <i>⭐</i> 8.7
+            </div>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="/api/placeholder/160/220" alt="Póster de Película" />
+          <div class="movie-info">
+            <h3>Whispers in the Dark</h3>
+            <p>Terror, Misterio</p>
+            <div class="rating">
+              <i>⭐</i> 8.9
+            </div>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="/api/placeholder/160/220" alt="Póster de Película" />
+          <div class="movie-info">
+            <h3>Summer Days</h3>
+            <p>Romance, Comedia</p>
+            <div class="rating">
+              <i>⭐</i> 7.8
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Calendar -->
+      <div class="calendar">
+        <div class="calendar-header">
+          <h3>Celendario de Próximos Estrenos</h3>
+          <div class="calendar-view">
+            <span class="active">Semana</span>
+            <span>Mes</span>
+            <span>Año</span>
+          </div>
+        </div>
+        
+        <div class="calendar-days">
+          <div class="calendar-day">Lun</div>
+          <div class="calendar-day">Mar</div>
+          <div class="calendar-day">Mié</div>
+          <div class="calendar-day">Jue</div>
+          <div class="calendar-day">Vie</div>
+          <div class="calendar-day">Sáb</div>
+          <div class="calendar-day">Dom</div>
+          
+          <div class="calendar-day">22</div>
+          <div class="calendar-day">23</div>
+          <div class="calendar-day today">24</div>
+          <div class="calendar-day">25</div>
+          <div class="calendar-day has-event">26</div>
+          <div class="calendar-day has-event">27</div>
+          <div class="calendar-day">28</div>
+        </div>
+      </div>
+      
+      <!-- Popular Movies -->
+      <div class="section-title">
+        <h2>Populares Ahora</h2>
+        <span class="see-all">Ver Todo</span>
+      </div>
+      
+      <div class="movie-grid">
+        <div class="movie-card">
+          <img src="Imagenes/PELICULA1.png" alt="Póster de Película" />
+          <div class="movie-info">
+            <h3>Dune: Parte Tres</h3>
+            <p>Ciencia Ficción, Aventura</p>
+            <div class="rating">
+              <i>⭐</i> 9.5
+            </div>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="Imagenes/PELICULA2.png" alt="Póster de Película" />
+          <div class="movie-info">
+            <h3>Avengers: Guerras Secretas</h3>
+            <p>Acción, Aventura</p>
+            <div class="rating">
+              <i>⭐</i> 9.1
+            </div>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="Imagenes/PELICULA3.png" alt="Póster de Película" />
+          <div class="movie-info">
+            <h3>The Midnight Club</h3>
+            <p>Suspenso, Misterio</p>
+            <div class="rating">
+              <i>⭐</i> 8.6
+            </div>
+          </div>
+        </div>
+        <div class="movie-card">
+          <img src="Imagenes/PELICULA4.png" alt="Póster de Película" />
+          <div class="movie-info">
+            <h3>trun: Legacy</h3>
+            <p>2010</p>
+          </div>
+        </div>
+    </div>
+  <script src="app.js"></script>
+  <script src="profile2.js"></script>
+</body>
+</html>
