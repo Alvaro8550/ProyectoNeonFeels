@@ -19,22 +19,19 @@
         <div class="menu-item active">
           <i>🏠</i> Inicio
         </div>
-        <div class="menu-item">
-          <i>🔍</i> Búsqueda Avanzada
-        </div>
-        <div class="menu-item">Ñ
+        <div class="menu-item" id="menu-proximos-estrenos" style="cursor: pointer;">
           <i>🎬</i> Próximos Estrenos
         </div>
-        <div class="menu-item" id="mis-listas-menu">
+        <div class="menu-item" id="mis-listas-menu" style="cursor:pointer;">
           <i>❤️</i> Mis Listas
         </div>
-        <div class="menu-item">
+        <div class="menu-item" id="menu-reviews" style="cursor:pointer;">
           <i>⭐</i> Reseñas y Calificaciones
         </div>
-        <div class="menu-item">
+        <div class="menu-item" id="menu-rankings-populares" style="cursor:pointer;">
           <i>📊</i> Rankings Populares
         </div>
-        <div class="menu-item">
+        <div class="menu-item" id="menu-comunidad" style="cursor:pointer;">
           <i>👥</i> Comunidad
         </div>
         
@@ -47,6 +44,7 @@
       </div>
       
       <!-- Main Content -->
+      <div id="tab-main-content">
       <div class="main-content">
         <div class="search-bar">
           <i>🔍</i>
@@ -159,18 +157,18 @@
           
           <div class="calendar-day">22</div>
           <div class="calendar-day">23</div>
-          <div class="calendar-day today">24</div>
-          <div class="calendar-day">25</div>
-          <div class="calendar-day has-event">26</div>
-          <div class="calendar-day has-event">27</div>
-          <div class="calendar-day">28</div>
+          <div class="calendar-day">Mié</div>
+          <div class="calendar-day">Jue</div>
+          <div class="calendar-day">Vie</div>
+          <div class="calendar-day">Sáb</div>
+          <div class="calendar-day">Dom</div>
         </div>
       </div>
       
       <!-- Popular Movies -->
       <div class="section-title">
         <h2>Populares Ahora</h2>
-        <span class="see-all">Ver Todo</span>
+        <span class="see-all" title="Actualizar">&#x21bb;</span>
       </div>
       
       <div class="movie-grid">
@@ -212,6 +210,25 @@
           </div>
         </div>
     </div>
+    </div>
+    <div id="tab-reviews" style="display:none; color: white; padding: 1rem;">
+      <!-- Contenido vacío para Reseñas y Calificaciones -->
+    </div>
+  <!-- Modal para mostrar detalles de la película -->
+  <div id="movie-modal" class="modal" style="display:none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8);">
+    <div class="modal-content" style="background-color: #121212; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; color: white; border-radius: 8px; position: relative;">
+      <span id="modal-close" style="color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p><strong>Año:</strong> <span id="modal-year"></span></p>
+      <p><strong>Género:</strong> <span id="modal-genre"></span></p>
+      <p><strong>Director:</strong> <span id="modal-director"></span></p>
+      <p><strong>Duración:</strong> <span id="modal-duration"></span> minutos</p>
+      <p><strong>País:</strong> <span id="modal-country"></span></p>
+      <p><strong>Fecha de estreno:</strong> <span id="modal-releaseDate"></span></p>
+      <p><strong>Calificación:</strong> <span id="modal-rating"></span></p>
+    </div>
+  </div>
+
   <script src="app.js"></script>
   <script src="profile2.js"></script>
 </body>
