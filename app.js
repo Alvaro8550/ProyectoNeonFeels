@@ -147,6 +147,18 @@ function displayRecommendations() {
         } else if (movie.title === "Tru: Legacy") {
             imageSrc = "Imagenes/PELICULA4.png";
             imageClass += " spaced-movie-poster";
+        } else if (movie.title === "Inception") {
+            imageSrc = "Imagenes/Inception.png";
+            imageClass += " spaced-movie-poster";
+        } else if (movie.title === "Interstellar") {
+            imageSrc = "Imagenes/Interstellar.png";
+            imageClass += " spaced-movie-poster";
+        } else if (movie.title === "Parasite") {
+            imageSrc = "Imagenes/Parasite.png";
+            imageClass += " spaced-movie-poster";
+        } else if (movie.title === "The Witcher") {
+            imageSrc = "Imagenes/TheWitcher.png";
+            imageClass += " spaced-movie-poster";
         }
         movieCard.innerHTML = `
             <img src="${imageSrc}" alt="${movie.title}" class="${imageClass}">
@@ -257,6 +269,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageSrc = "Imagenes/PELICULA3.png";
             } else if (movie.title === "Tru: Legacy") {
                 imageSrc = "Imagenes/PELICULA4.png";
+            } else if (movie.title === "Inception") {
+                imageSrc = "Imagenes/Inception.png";
+            } else if (movie.title === "Interstellar") {
+                imageSrc = "Imagenes/Interstellar.png";
+            } else if (movie.title === "Parasite") {
+                imageSrc = "Imagenes/Parasite.png";
+            } else if (movie.title === "The Witcher") {
+                imageSrc = "Imagenes/TheWitcher.png";
             }
             movieCard.innerHTML = `
                 <img src="${imageSrc}" alt="${movie.title}" class="movie-poster" style="cursor:pointer;">
@@ -266,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="rating">
                         <i>⭐</i> ${movie.rating}
                     </div>
+                    <button class="watch-later-button" data-title="${movie.title}">Ver más tarde</button>
                 </div>
             `;
             movieContainer.appendChild(movieCard);
@@ -274,8 +295,24 @@ document.addEventListener('DOMContentLoaded', () => {
             movieCard.querySelector('img').addEventListener('click', () => {
                 showMovieModal(movie);
             });
+
+            // Add click event for "Ver más tarde" button
+            movieCard.querySelector('.watch-later-button').addEventListener('click', () => {
+                addToWatchLater(movie);
+            });
         });
     }
+
+function addToWatchLater(movie) {
+    let watchLaterList = JSON.parse(localStorage.getItem('watchLaterList')) || [];
+    if (!watchLaterList.some(m => m.title === movie.title)) {
+        watchLaterList.push(movie);
+        localStorage.setItem('watchLaterList', JSON.stringify(watchLaterList));
+        alert(`La película "${movie.title}" ha sido añadida a "Mis Listas".`);
+    } else {
+        alert(`La película "${movie.title}" ya está en "Mis Listas".`);
+    }
+}
 
     // Function to filter movies based on selected criteria
     function filterMovies() {

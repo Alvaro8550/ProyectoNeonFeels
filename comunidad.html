@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Foro de Discusión - Comunidad</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .header p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-top: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        th {
+            background-color: #1f1f1f;
+        }
+        tr:nth-child(even) {
+            background-color: #1a1a1a;
+        }
+        tr:nth-child(odd) {
+            background-color: #222;
+        }
+        .create-thread-btn {
+            background-color: #39ff14;
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            text-align: center;
+            display: inline-block;
+        }
+        .thread-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .thread-list li {
+            padding: 1rem;
+            border-bottom: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .thread-title {
+            color: #39ff14;
+            text-decoration: none;
+            font-weight: bold;
+            flex: 1;
+        }
+        .thread-date {
+            margin-left: 1rem;
+            color: #ccc;
+            white-space: nowrap;
+        }
+        .thread-tag {
+            margin-left: 1rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .tag-no-spoilers {
+            background-color: #39ff14;
+            color: black;
+        }
+        .tag-with-spoilers {
+            background-color: #ff3c3c;
+            color: white;
+        }
+        #back-to-cartelera {
+            margin-top: 2rem;
+            background-color: #39ff14;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>FORO DE DISCUSIÓN</h1>
+        <p>Opiniones sin spoilers, debates con pasión</p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Película</th>
+                <th>Género</th>
+                <th>Más activo</th>
+                <th>Más reciente</th>
+                <th><button class="create-thread-btn" id="create-thread-btn">+ CREAR NUEVO HILO</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Filas vacías según requerimiento -->
+            <tr>
+                <td colspan="5" style="text-align:center; color:#666;">No hay datos disponibles</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul class="thread-list">
+        <li>
+            <a href="#" class="thread-title">¿Final de 'Eterna' fue flojo o genial?</a>
+            <span class="thread-date">18 abr.</span>
+            <span class="thread-tag tag-no-spoilers">[Sin Spoilers]</span>
+        </li>
+        <li>
+            <a href="#" class="thread-title">Análisis del simbolismo en 'Noche Cósmica'</a>
+            <span class="thread-date">17 abr.</span>
+            <span class="thread-tag tag-with-spoilers">[Con Spoilers]</span>
+        </li>
+        <li>
+            <a href="#" class="thread-title">La mejor película de ciencia ficción</a>
+            <span class="thread-date">15 abr.</span>
+            <span class="thread-tag tag-no-spoilers">[Sin Spoilers]</span>
+        </li>
+        <li>
+            <a href="#" class="thread-title">Opiniones sobre la actuación en 'Rescate Infernal'</a>
+            <span class="thread-date">14 abr.</span>
+            <span class="thread-tag tag-with-spoilers">[Con Spoilers]</span>
+        </li>
+    </ul>
+    <button id="back-to-cartelera" onclick="goBackToCartelera()">Volver a la Cartelera</button>
+
+<script src="comunidad.js"></script>
+<script>
+    function goBackToCartelera() {
+        window.location.href = 'cartelera.html';
+    }
+</script>
+</body>
+</html>

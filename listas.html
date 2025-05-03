@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mis Listas - NeonFeels</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        .lists-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .list {
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 5px #39ff14;
+        }
+        .list-title {
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #39ff14;
+        }
+        .movie-item {
+            margin-left: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        #back-to-cartelera {
+            margin-top: 2rem;
+            background-color: #39ff14;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            width: 200px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mis Listas</h1>
+    <div class="lists-container" id="lists-container">
+        <!-- Lists will be dynamically inserted here -->
+    </div>
+    <button id="back-to-cartelera" onclick="goBackToCartelera()">Volver a la Cartelera</button>
+
+<script src="listas.js"></script>
+<script>
+    function goBackToCartelera() {
+        window.location.href = 'cartelera.html';
+    }
+</script>
+</body>
+</html>

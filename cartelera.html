@@ -19,21 +19,21 @@
         <div class="menu-item active">
           <i>🏠</i> Inicio
         </div>
-        <div class="menu-item" id="menu-proximos-estrenos" style="cursor: pointer;">
+        <a href="proximos-estrenos.html" class="menu-item" id="menu-proximos-estrenos" style="cursor:pointer; text-decoration:none; color:inherit;">
           <i>🎬</i> Próximos Estrenos
-        </div>
-        <div class="menu-item" id="mis-listas-menu" style="cursor:pointer;">
+        </a>
+        <a href="listas.html" class="menu-item" id="mis-listas-menu" style="cursor:pointer; text-decoration:none; color:inherit;">
           <i>❤️</i> Mis Listas
-        </div>
-        <div class="menu-item" id="menu-reviews" style="cursor:pointer;">
+        </a>
+        <a href="reviews.html" class="menu-item" id="menu-reviews" style="cursor:pointer; text-decoration:none; color:inherit;">
           <i>⭐</i> Reseñas y Calificaciones
-        </div>
-        <div class="menu-item" id="menu-rankings-populares" style="cursor:pointer;">
+        </a>
+        <a href="rankings.html" class="menu-item" id="menu-rankings-populares" style="cursor:pointer; text-decoration:none; color:inherit;">
           <i>📊</i> Rankings Populares
-        </div>
-        <div class="menu-item" id="menu-comunidad" style="cursor:pointer;">
-          <i>👥</i> Comunidad
-        </div>
+        </a>
+<a href="comunidad.html" class="menu-item" id="menu-comunidad" style="cursor:pointer; text-decoration:none; color:inherit;">
+  <i>👥</i> Foro de discusiones
+</a>
         
         <div class="profile">
           <a href="profile2.html" class="profile-button" style="display: flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; cursor: pointer;">
@@ -44,173 +44,221 @@
       </div>
       
       <!-- Main Content -->
-      <div id="tab-main-content">
-      <div class="main-content">
-        <div class="search-bar">
-          <i>🔍</i>
-          <input type="text" placeholder="Buscar películas, directores, actores..." />
-        </div>
-      
-      <!-- Filters -->
-      <h3>Búsqueda Avanzada</h3>
-      <form id="filter-form">
-        <label for="genre-filter">Género:</label>
-        <select id="genre-filter" name="genre-filter">
-          <option value="All">Todos</option>
-          <option value="Acción">Acción</option>
-          <option value="Comedia">Comedia</option>
-          <option value="Drama">Drama</option>
-          <option value="Terror">Terror</option>
-          <option value="Ciencia Ficción">Ciencia Ficción</option>
-          <option value="Suspenso">Suspenso</option>
-          <option value="Fantasía">Fantasía</option>
-        </select>
-        <label for="year-filter">Año:</label>
-        <select id="year-filter" name="year-filter">
-          <option value="">Todos</option>
-          <option value="2025">2025</option>
-          <option value="2024">2024</option>
-          <option value="2020-2023">2020-2023</option>
-          <option value="2010-2019">2010-2019</option>
-          <option value="Before 2010">Antes de 2010</option>
-        </select>
-        <label for="rating-filter">Calificación mínima:</label>
-        <select id="rating-filter" name="rating-filter">
-          <option value="0">Todas</option>
-          <option value="9">9+</option>
-          <option value="8">8+</option>
-          <option value="7">7+</option>
-          <option value="6">6+</option>
-        </select>
-        <button id="filter-button" type="submit">Filtrar</button>
-        <button id="clear-filters-button" type="button">Limpiar filtros</button>
-      </form>
-      
-      <!-- Personalized Recommendations -->
-      <div class="section-title">
-        <h2>Recomendado Para Ti</h2>
-        <span class="see-all">Ver Todo</span>
-      </div>
-      
-      <div class="movie-grid">
-        <div class="movie-card">
-          <img src="/api/placeholder/160/220" alt="Póster de Película" />
-          <div class="movie-info">
-            <h3>Interstellar Crisis</h3>
-            <p>Ciencia Ficción, Aventura</p>
-            <div class="rating">
-              <i>⭐</i> 9.2
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img src="/api/placeholder/160/220" alt="Póster de Película" />
-          <div class="movie-info">
-            <h3>The Last Voyage</h3>
-            <p>Drama, Suspenso</p>
-            <div class="rating">
-              <i>⭐</i> 8.7
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img src="/api/placeholder/160/220" alt="Póster de Película" />
-          <div class="movie-info">
-            <h3>Whispers in the Dark</h3>
-            <p>Terror, Misterio</p>
-            <div class="rating">
-              <i>⭐</i> 8.9
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img src="/api/placeholder/160/220" alt="Póster de Película" />
-          <div class="movie-info">
-            <h3>Summer Days</h3>
-            <p>Romance, Comedia</p>
-            <div class="rating">
-              <i>⭐</i> 7.8
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Calendar -->
-      <div class="calendar">
-        <div class="calendar-header">
-          <h3>Celendario de Próximos Estrenos</h3>
-          <div class="calendar-view">
-            <span class="active">Semana</span>
-            <span>Mes</span>
-            <span>Año</span>
-          </div>
-        </div>
-        
-        <div class="calendar-days">
-          <div class="calendar-day">Lun</div>
-          <div class="calendar-day">Mar</div>
-          <div class="calendar-day">Mié</div>
-          <div class="calendar-day">Jue</div>
-          <div class="calendar-day">Vie</div>
-          <div class="calendar-day">Sáb</div>
-          <div class="calendar-day">Dom</div>
-          
-          <div class="calendar-day">22</div>
-          <div class="calendar-day">23</div>
-          <div class="calendar-day">Mié</div>
-          <div class="calendar-day">Jue</div>
-          <div class="calendar-day">Vie</div>
-          <div class="calendar-day">Sáb</div>
-          <div class="calendar-day">Dom</div>
-        </div>
-      </div>
-      
-      <!-- Popular Movies -->
-      <div class="section-title">
-        <h2>Populares Ahora</h2>
-        <span class="see-all" title="Actualizar">&#x21bb;</span>
-      </div>
-      
-      <div class="movie-grid">
-        <div class="movie-card">
-          <img src="Imagenes/PELICULA1.png" alt="Póster de Película" />
-          <div class="movie-info">
-            <h3>Dune: Parte Tres</h3>
-            <p>Ciencia Ficción, Aventura</p>
-            <div class="rating">
-              <i>⭐</i> 9.5
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img src="Imagenes/PELICULA2.png" alt="Póster de Película" />
-          <div class="movie-info">
-            <h3>Avengers: Guerras Secretas</h3>
-            <p>Acción, Aventura</p>
-            <div class="rating">
-              <i>⭐</i> 9.1
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img src="Imagenes/PELICULA3.png" alt="Póster de Película" />
-          <div class="movie-info">
-            <h3>The Midnight Club</h3>
-            <p>Suspenso, Misterio</p>
-            <div class="rating">
-              <i>⭐</i> 8.6
-            </div>
-          </div>
-        </div>
-        <div class="movie-card">
-          <img src="Imagenes/PELICULA4.png" alt="Póster de Película" />
-          <div class="movie-info">
-            <h3>trun: Legacy</h3>
-            <p>2010</p>
-          </div>
-        </div>
+  <div id="tab-main-content">
+  <div class="main-content">
+    <div class="search-bar">
+      <i>🔍</i>
+      <input type="text" placeholder="Buscar películas, directores, actores..." />
     </div>
+  
+  <!-- Filters -->
+  <h3>Búsqueda Avanzada</h3>
+  <form id="filter-form">
+    <label for="genre-filter">Género:</label>
+    <select id="genre-filter" name="genre-filter">
+      <option value="All">Todos</option>
+      <option value="Acción">Acción</option>
+      <option value="Comedia">Comedia</option>
+      <option value="Drama">Drama</option>
+      <option value="Terror">Terror</option>
+      <option value="Ciencia Ficción">Ciencia Ficción</option>
+      <option value="Suspenso">Suspenso</option>
+      <option value="Fantasía">Fantasía</option>
+    </select>
+    <label for="year-filter">Año:</label>
+    <select id="year-filter" name="year-filter">
+      <option value="">Todos</option>
+      <option value="2025">2025</option>
+      <option value="2024">2024</option>
+      <option value="2020-2023">2020-2023</option>
+      <option value="2010-2019">2010-2019</option>
+      <option value="Before 2010">Antes de 2010</option>
+    </select>
+    <label for="rating-filter">Calificación mínima:</label>
+    <select id="rating-filter" name="rating-filter">
+      <option value="0">Todas</option>
+      <option value="9">9+</option>
+      <option value="8">8+</option>
+      <option value="7">7+</option>
+      <option value="6">6+</option>
+    </select>
+    <button id="filter-button" type="submit">Filtrar</button>
+    <button id="clear-filters-button" type="button">Limpiar filtros</button>
+  </form>
+  
+  <!-- cartelera-->
+  <div class="section-title">
+    <h2>Cartelera</h2>
+    <span class="see-all">Ver Todo</span>
+  </div>
+  
+  <div class="movie-grid">
+  <div class="movie-card">
+    <img src="Imagenes/PELICULA5.png" alt="Póster de Inception" width="160" height="220" style="display:block;" />
+    <div class="movie-info">
+      <h3>Inception</h3>
+      <p>Ciencia Ficción</p>
+      <div class="rating">
+        <i>⭐</i> 8.8
+      </div>
     </div>
+  </div>
+  <div class="movie-card">
+    <img src="Imagenes/Captura de pantalla 2025-05-03 095645.png" alt="Póster de Interstellar" width="160" height="220" style="display:block;" />
+    <div class="movie-info">
+      <h3>Interstellar</h3>
+      <p>Ciencia Ficción</p>
+      <div class="rating">
+        <i>⭐</i> 8.6
+      </div>
+    </div>
+  </div>
+  <div class="movie-card">
+    <img src="Imagenes/PELICULA7.png" alt="Póster de Parasite" width="160" height="220" style="display:block;" />
+    <div class="movie-info">
+      <h3>Parasite</h3>
+      <p>Suspenso</p>
+      <div class="rating">
+        <i>⭐</i> 8.6
+      </div>
+    </div>
+  </div>
+  <div class="movie-card">
+    <img src="Imagenes/PELICULA8.png" alt="Póster de The Witcher" width="160" height="220" style="display:block;" />
+    <div class="movie-info">
+      <h3>The Witcher</h3>
+      <p>Fantasía</p>
+      <div class="rating">
+        <i>⭐</i> 8.6
+      </div>
+    </div>
+  </div>
+  <div class="movie-card">
+    <img src="Imagenes/PELICULA5.png" alt="Póster de Interstellar Crisis" width="160" height="220" style="display:block;" />
+    <div class="movie-info">
+      <h3>Interstellar Crisis</h3>
+      <p>Ciencia Ficción, Aventura</p>
+      <div class="rating">
+        <i>⭐</i> 9.2
+      </div>
+    </div>
+  </div>
+  <div class="movie-card">
+    <img src="Imagenes/Captura de pantalla 2025-05-03 095645.png" alt="Póster de The Last Voyage" width="160" height="220" style="display:block;" />
+    <div class="movie-info">
+      <h3>The Last Voyage</h3>
+      <p>Drama, Suspenso</p>
+      <div class="rating">
+        <i>⭐</i> 8.7
+      </div>
+    </div>
+  </div>
+  <div class="movie-card">
+    <img src="Imagenes/PELICULA7.png" alt="Póster de Whispers in the Dark" width="160" height="220" style="display:block;" />
+    <div class="movie-info">
+      <h3>Whispers in the Dark</h3>
+      <p>Terror, Misterio</p>
+      <div class="rating">
+        <i>⭐</i> 8.9
+      </div>
+    </div>
+  </div>
+  <div class="movie-card">
+    <img src="Imagenes/PELICULA8.png" alt="Póster de Summer Days" width="160" height="220" style="display:block;" />
+    <div class="movie-info">
+      <h3>Summer Days</h3>
+      <p>Romance, Comedia</p>
+      <div class="rating">
+        <i>⭐</i> 7.8
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <!-- Calendar -->
+  <div class="calendar">
+    <div class="calendar-header">
+      <h3>Celendario de Próximos Estrenos</h3>
+      <div class="calendar-view">
+        <span class="active">Semana</span>
+        <span>Mes</span>
+        <span>Año</span>
+      </div>
+    </div>
+    
+    <div class="calendar-days">
+      <div class="calendar-day">Lun</div>
+      <div class="calendar-day">Mar</div>
+      <div class="calendar-day">Mié</div>
+      <div class="calendar-day">Jue</div>
+      <div class="calendar-day">Vie</div>
+      <div class="calendar-day">Sáb</div>
+      <div class="calendar-day">Dom</div>
+      
+      <div class="calendar-day">22</div>
+      <div class="calendar-day">23</div>
+      <div class="calendar-day">Mié</div>
+      <div class="calendar-day">Jue</div>
+      <div class="calendar-day">Vie</div>
+      <div class="calendar-day">Sáb</div>
+      <div class="calendar-day">Dom</div>
+    </div>
+  </div>
+  
+  <!-- Popular Movies -->
+  <div class="section-title">
+    <h2>Populares Ahora</h2>
+    <span class="see-all" title="Actualizar">&#x21bb;</span>
+  </div>
+  
+  <div class="movie-grid">
+    <div class="movie-card">
+      <img src="Imagenes/PELICULA1.png" alt="Póster de Película" width="160" height="220" />
+      <div class="movie-info">
+        <h3>Dune: Parte Tres</h3>
+        <p>Ciencia Ficción, Aventura</p>
+        <div class="rating">
+          <i>⭐</i> 9.5
+        </div>
+      </div>
+    </div>
+    <div class="movie-card">
+      <img src="Imagenes/PELICULA2.png" alt="Póster de Película" width="160" height="220" />
+      <div class="movie-info">
+        <h3>Avengers: Guerras Secretas</h3>
+        <p>Acción, Aventura</p>
+        <div class="rating">
+          <i>⭐</i> 9.1
+        </div>
+      </div>
+    </div>
+    <div class="movie-card">
+      <img src="Imagenes/PELICULA3.png" alt="Póster de Película" width="160" height="220" />
+      <div class="movie-info">
+        <h3>The Midnight Club</h3>
+        <p>Suspenso, Misterio</p>
+        <div class="rating">
+          <i>⭐</i> 8.6
+        </div>
+      </div>
+    </div>
+    <div class="movie-card">
+      <img src="Imagenes/PELICULA4.png" alt="Póster de Película" width="160" height="220" />
+      <div class="movie-info">
+        <h3>trun: Legacy</h3>
+        <p>2010</p>
+      </div>
+    </div>
+</div>
+</div>
+
+  <div id="tab-proximos-estrenos" style="display:none; color: white; padding: 1rem;">
+    <h2>Próximos Estrenos</h2>
+    <p>Aquí puedes ver los próximos estrenos de películas y series.</p>
+    <div class="movie-grid" id="upcoming-movies-grid">
+      <!-- Aquí se pueden agregar dinámicamente las tarjetas de películas próximas -->
+    </div>
+  </div>
     <div id="tab-reviews" style="display:none; color: white; padding: 1rem;">
       <!-- Contenido vacío para Reseñas y Calificaciones -->
     </div>
@@ -231,5 +279,33 @@
 
   <script src="app.js"></script>
   <script src="profile2.js"></script>
+
+  <!-- Alert Notifications -->
+  <div id="alert-notifications" style="position: fixed; top: 10px; right: 10px; width: 300px; max-height: 80vh; overflow-y: auto; z-index: 10000;"></div>
+
+  <!-- Alert Preferences Modal -->
+  <div id="alert-preferences-modal" style="display:none; position: fixed; z-index: 10001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7);">
+    <div style="background-color: #121212; margin: 10% auto; padding: 20px; border: 1px solid #39ff14; width: 90%; max-width: 400px; color: white; border-radius: 8px; position: relative;">
+      <h2>Preferencias de Alertas</h2>
+      <label>
+        <input type="checkbox" id="enable-alerts-checkbox" />
+        Habilitar alertas
+      </label>
+      <br/>
+      <label>
+        <input type="checkbox" id="mute-alerts-checkbox" />
+        Silenciar alertas
+      </label>
+      <br/>
+      <button id="close-alert-preferences" style="margin-top: 10px; background-color: #39ff14; border: none; padding: 10px 15px; cursor: pointer; font-weight: bold; color: black; border-radius: 5px;">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Alert Preferences Button -->
+  <button id="alert-preferences-button" title="Preferencias de Alertas" style="position: fixed; bottom: 20px; right: 20px; background-color: #39ff14; border: none; padding: 10px 12px; cursor: pointer; font-weight: bold; color: black; border-radius: 50%; z-index: 10002; font-size: 20px; line-height: 1;">
+    🔔
+  </button>
+
+  <script src="alerts.js"></script>
 </body>
 </html>
