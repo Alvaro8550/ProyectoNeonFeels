@@ -1,43 +1,68 @@
-// Obtener el formulario y el mensaje de error
-const registerForm = document.getElementById('registerForm');
-const errorMessageRegister = document.getElementById('error-message-register');
+document.addEventListener('DOMContentLoaded', function () {
+    const logocontainer = document.querySelector('.login-container');
+    const registerBtn = document.querySelector('.submit-button');
 
-// Función para validar el registro
-registerForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+    //Api de regsitro
+    const registerForm = document.querySelector('#registerForm');
+    const API_URL = 'http://localhost:3000/api';
 
-    // Obtener valores del formulario
-    const email = document.getElementById('new-email').value;
-    const password = document.getElementById('new-password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
 
-    // Validar si el correo tiene una sintaxis válida
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        errorMessageRegister.textContent = 'Por favor, ingresa un correo electrónico válido.';
-        return;
-    }
 
-    // Validar que las contraseñas coincidan
-    if (password !== confirmPassword) {
-        errorMessageRegister.textContent = 'Las contraseñas no coinciden.';
-        return;
-    }
+    //Manejar el formulario de registro
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    // Validación simple para la contraseña (al menos 6 caracteres)
-    if (password.length < 6) {
-        errorMessageRegister.textContent = 'La contraseña debe tener al menos 6 caracteres.';
-        return;
-    }
 
-    // Si todo es válido, simular el registro
-    errorMessageRegister.textContent = '';
-    alert('¡Te has registrado exitosamente! Ahora puedes iniciar sesión.');
-    
-    // Simular el almacenamiento del usuario en el localStorage (para fines de ejemplo)
-    localStorage.setItem('email', email);
-    localStorage.setItem('password', password);
 
-    // Redirigir a la página de login
-    window.location.href = 'index.html';
-});
+        //Obtener datos de los formularios
+        const nombre_usuario = registerForm.querySelector('input[type="text"]').value;
+        const email = registerForm.querySelector('input[type="email"]').value;
+        const contraseña = registerForm.querySelector('input[type="password"]').value;
+
+
+
+        try {
+            //Enviar la solicitud al servidor
+            const response = await fetch(`${API_URL}/register`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+
+                },
+                body: JSON.stringify({
+                    nombre_usuario,
+                    email,
+                    contraseña
+
+                    
+                })
+
+            });
+
+
+            if (response.ok) {
+                alert("Usuario registrado correctamnete")
+
+                //Limpiar el formulario 
+                registerForm.reset();
+
+
+
+            } else {
+                alert("Error al registrar el usuario");
+                registerForm.reset();
+
+            }
+        } catch (error) {   
+
+            console.log("Error al registrar el usuario", error);
+
+
+
+        }
+
+
+
+    });
+
+})

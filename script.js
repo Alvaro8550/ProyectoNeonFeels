@@ -2,27 +2,35 @@
 const loginForm = document.getElementById('loginForm');
 const errorMessage = document.getElementById('error-message');
 
-// Función para validar el login
-loginForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+// Función para validar el login haciendo petición al backend
+loginForm.addEventListener('submit', async function(event) {
+  event.preventDefault();
 
-    // Obtener valores del formulario
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-    // Obtener datos del "registro" almacenado en localStorage
-    const storedEmail = localStorage.getItem('email');
-    const storedPassword = localStorage.getItem('password');
+  try {
+    const response = await fetch('http://localhost:3000/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, contraseña: password }) // nombre de campo que espera backend
+    });
 
-    // Verificar si el correo y la contraseña coinciden
-    if (email === storedEmail && password === storedPassword) {
-        errorMessage.textContent = '';
-        alert('¡Bienvenido al sistema!');
-        
-        // Guardar estado de login y redirigir a perfil
-        localStorage.setItem('isLoggedIn', 'true');
-        window.location.href = 'profile.html';
+    if (response.ok) {
+      // Login correcto
+      errorMessage.textContent = '';
+      alert('¡Bienvenido al sistema!');
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('userEmail', email);
+      window.location.href = 'profile.html'; // redirige a perfil
     } else {
-        errorMessage.textContent = 'Correo o contraseña incorrectos.';
+      // Login fallido
+      errorMessage.textContent = 'Correo o contraseña incorrectos.';
     }
+  } catch (error) {
+    console.error('Error al conectar con el servidor:', error);
+    errorMessage.textContent = 'Error de conexión con el servidor.';
+  }
 });
